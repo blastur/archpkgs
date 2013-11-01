@@ -27,6 +27,11 @@ build() {
 
   make configure-host || return 1
   make || return 1
+}
+
+package() {
+  cd $srcdir/binutils-$pkgver/build
+
   make -j1 DESTDIR=$pkgdir/ install
 
   # clean-up cross compiler root
