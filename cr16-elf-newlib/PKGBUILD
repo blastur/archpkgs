@@ -24,7 +24,7 @@ build() {
 
   ../configure  --build=$CHOST --host=$CHOST -target=${_target} \
 	--with-build-sysroot=${_sysroot} --prefix=${_sysroot} --disable-multilib \
-    --disable-shared    
+    --disable-shared
 
   make || return 1
 }
