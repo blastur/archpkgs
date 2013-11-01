@@ -16,8 +16,8 @@ md5sums=('33adb18c3048d057ac58d07a3f1adb38')
 
 build() {
   cd $srcdir/binutils-$pkgver
-  
-  mkdir -p build 
+
+  mkdir -p build
   cd build
 
   ../configure --prefix=${_sysroot} --bindir=/usr/bin \
@@ -28,7 +28,7 @@ build() {
   make configure-host || return 1
   make || return 1
   make -j1 DESTDIR=$pkgdir/ install
-  
+
   # clean-up cross compiler root
   rm -r ${pkgdir}/${_sysroot}/share/{info,man}
 }
