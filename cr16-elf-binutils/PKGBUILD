@@ -4,7 +4,7 @@ _target=cr16-unknown-elf
 _sysroot=/usr/lib/${_target}
 pkgname=cr16-elf-binutils
 pkgver=2.23.1
-pkgrel=1
+pkgrel=2
 pkgdesc="CR16 binutils"
 arch=('i686' 'x86_64')
 url="http://www.gnu.org/software/binutils/"
@@ -23,7 +23,7 @@ build() {
   ../configure --prefix=${_sysroot} --bindir=/usr/bin \
     --with-sysroot=${_sysroot} --build=$CHOST --host=$CHOST \
     --target=${_target} --enable-shared --disable-static \
-    --disable-nls --disable-multilib
+    --disable-nls --disable-multilib --enable-gold
 
   make configure-host || return 1
   make || return 1
