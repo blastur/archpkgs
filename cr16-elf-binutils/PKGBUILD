@@ -10,7 +10,7 @@ arch=('i686' 'x86_64')
 url="http://www.gnu.org/software/binutils/"
 license=('GPL')
 depends=('glibc>=2.10.1' 'zlib')
-options=('!libtool')
+options=('!libtool' '!buildflags')
 source=(http://ftp.gnu.org/gnu/binutils/binutils-${pkgver}.tar.bz2)
 md5sums=('33adb18c3048d057ac58d07a3f1adb38')
 
