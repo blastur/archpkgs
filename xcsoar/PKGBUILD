@@ -1,7 +1,7 @@
 # Maintainer: Magnus Olsson <magnus@minimum.se>
 
 pkgname=xcsoar-git
-pkgver=20130223
+pkgver=20140313
 pkgrel=1
 pkgdesc="A tactical glide computer."
 arch=('any')
@@ -14,7 +14,7 @@ provides=()
 conflicts=()
 replaces=()
 backup=()
-options=('!buildflags' '!makeflags')
+options=('!buildflags')
 install=
 source=('dejavu_font_paths.patch')
 noextract=()
@@ -43,7 +43,7 @@ build() {
 
   patch -p1 -i $srcdir/dejavu_font_paths.patch
   
-  make TARGET=UNIX
+  make TARGET=UNIX DEBUG=n V=2
 }
 
 package() {
